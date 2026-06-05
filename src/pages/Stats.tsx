@@ -10,7 +10,6 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: 
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       
-      // Easing out function
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOutQuart * end));
       
@@ -42,7 +41,7 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: 
 
   return (
     <div ref={counterRef} className="text-center">
-      <div className="text-5xl md:text-7xl font-display font-bold text-brand-orange mb-4">
+      <div className="text-[64px] md:text-[80px] font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-brand-orange to-brand-yellow mb-2 leading-none">
         {count}{suffix}
       </div>
     </div>
@@ -51,23 +50,24 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: 
 
 export default function Stats() {
   return (
-    <section className="py-24 px-6 border-y border-white/10 bg-[#111]">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
-        <div className="text-center">
+    <section className="py-32 px-6 bg-[#0d0d0d] border-y border-white/5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 relative z-10">
+        <div className="text-center space-y-4">
           <Counter end={15} suffix="+" />
-          <p className="text-white/60 font-medium uppercase tracking-wider text-sm">Years Experience</p>
+          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Years Experience</p>
         </div>
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <Counter end={200} suffix="+" />
-          <p className="text-white/60 font-medium uppercase tracking-wider text-sm">Repeated Clients</p>
+          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Repeated Clients</p>
         </div>
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <Counter end={478} />
-          <p className="text-white/60 font-medium uppercase tracking-wider text-sm">Projects Done</p>
+          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Projects Done</p>
         </div>
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <Counter end={350} suffix="+" />
-          <p className="text-white/60 font-medium uppercase tracking-wider text-sm">Happy Clients</p>
+          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Happy Clients</p>
         </div>
       </div>
     </section>

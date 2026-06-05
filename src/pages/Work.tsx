@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const categories = ["All", "Commercial", "Documentary", "Corporate", "Short Film"];
 
@@ -19,56 +21,99 @@ export default function Work() {
     : projects.filter(p => p.category === activeTab);
 
   return (
-    <section id="work" className="py-32 px-6 bg-black relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="work" className="py-32 px-6 bg-[#0d0d0d] relative overflow-hidden">
+      {/* Decorative gradient */}
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-teal/10 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-6">
-            <div className="inline-block px-4 py-2 rounded-full border border-brand-teal/30 bg-brand-teal/10 text-brand-teal text-sm font-medium tracking-wider uppercase">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-2 rounded-full border border-brand-teal/20 bg-brand-teal/5 text-brand-teal text-[13px] font-medium tracking-wide uppercase"
+            >
               Portfolio
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight">
-              Our Handpicked Featured Portfolio
-            </h2>
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[40px] md:text-[56px] font-display font-bold leading-[1.1] tracking-[-0.02em]"
+            >
+              Our Handpicked <br className="hidden md:block"/>Featured Portfolio
+            </motion.h2>
           </div>
-          <a href="#" className="flex-shrink-0 text-white font-bold border-b border-white hover:text-brand-orange hover:border-brand-orange transition-all pb-1">
+          
+          <Link 
+            to="/projects" 
+            className="flex-shrink-0 text-white font-bold border-b-2 border-white hover:text-brand-orange hover:border-brand-orange transition-all pb-1 text-[15px] uppercase tracking-wider"
+          >
             See All Projects
-          </a>
+          </Link>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-4 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap gap-3 mb-16"
+        >
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`px-6 py-2 rounded-full border transition-all duration-300 font-medium ${
+              className={`px-6 py-3 rounded-full border transition-all duration-300 font-medium text-[14px] ${
                 activeTab === cat 
                   ? 'bg-white text-black border-white' 
-                  : 'bg-transparent text-white/70 border-white/20 hover:border-white/50'
+                  : 'bg-transparent text-white/60 border-white/10 hover:border-white/30 hover:text-white'
               }`}
             >
               {cat}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="group cursor-pointer">
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-6 relative">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-                <img 
-                  src={`/assets/${project.img}.png`} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <h3 className="text-2xl font-display font-bold mb-2 group-hover:text-brand-orange transition-colors">{project.title}</h3>
-              <p className="text-white/60">{project.subtitle}</p>
-            </div>
-          ))}
-        </div>
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.div 
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                key={project.id} 
+                className="group cursor-pointer"
+              >
+                <div className="aspect-[4/5] overflow-hidden rounded-[24px] mb-6 relative bg-[#111]">
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-colors duration-500 z-10" />
+                  
+                  {/* Category Badge on hover */}
+                  <div className="absolute top-6 left-6 z-20 opacity-0 group-hover:opacity-100 transform -translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-xs font-bold uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <img 
+                    src={`/assets/${project.img}.png`} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-[24px] font-display font-bold group-hover:text-brand-orange transition-colors">{project.title}</h3>
+                  <p className="text-white/50 text-[15px] font-light">{project.subtitle}</p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
