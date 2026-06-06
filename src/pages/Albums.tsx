@@ -1,44 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-
-const albumsData = [
-  {
-    id: 1,
-    title: "Urban Chronicles",
-    location: "Streets of India",
-    image: "/assets/portfolio_1.png",
-    link: "/photo-albums/urban-chronicles"
-  },
-  {
-    id: 2,
-    title: "Speed Demons",
-    location: "NASCAR tracks",
-    image: "/assets/portfolio_2.png",
-    link: "/photo-albums/speed-demons"
-  },
-  {
-    id: 3,
-    title: "Exploring the Wonders of Indonesia",
-    location: "Indonesia",
-    image: "/assets/portfolio_3.png",
-    link: "/photo-albums/exploring-the-wonders-of-indonesia"
-  },
-  {
-    id: 4,
-    title: "Thailand: A Photographic Odyssey",
-    location: "Thailand",
-    image: "/assets/portfolio_4.png", // Assuming portfolio_4 exists, otherwise we'll fall back or reuse
-    link: "/photo-albums/thailand-a-photographic-odyssey"
-  },
-  {
-    id: 5,
-    title: "Faces of the World: A Portrait Gallery",
-    location: "Worldwide",
-    image: "/assets/portfolio_5.png",
-    link: "/photo-albums/faces-of-the-world-a-portrait-gallery"
-  }
-];
+import { albumsData } from '../lib/albumsData';
 
 export default function Albums() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -111,33 +74,39 @@ export default function Albums() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {albumsData.map((album, i) => (
             <motion.div
-              key={album.id}
+              key={album.slug}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
-              className="group cursor-pointer block"
             >
-              <div className="w-full rounded-[30px] overflow-hidden mb-6 aspect-[4/3] bg-white/5 relative">
-                <img 
-                  src={album.image} 
-                  alt={album.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to portfolio_1 if image doesn't exist
-                    e.currentTarget.src = "/assets/portfolio_1.png";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="px-2">
-                <h3 className="text-2xl font-display font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
-                  {album.title}
-                </h3>
-                <p className="text-white/60 font-body font-light">
-                  {album.location}
-                </p>
-              </div>
+              <Link to={`/photo-albums/${album.slug}`} className="group cursor-pointer block">
+                <div className="w-full rounded-[30px] overflow-hidden mb-6 aspect-[4/3] bg-white/5 relative">
+                  <img 
+                    src={album.image} 
+                    alt={album.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => {
+                      e.currentTarget.src = "/assets/portfolio_1.png";
+                    }}
+                  />
+                  {/* Hover Overlay with VIEW FULL ALBUM Badge */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-20">
+                    <div className="w-28 h-28 rounded-full bg-white text-black font-display font-bold text-[12px] tracking-wider flex items-center justify-center text-center p-4 border border-white/20 transform scale-75 group-hover:scale-100 transition-transform duration-500 shadow-2xl">
+                      VIEW FULL ALBUM
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="px-2">
+                  <h3 className="text-2xl font-display font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
+                    {album.title}
+                  </h3>
+                  <p className="text-white/60 font-body font-light">
+                    {album.location}
+                  </p>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

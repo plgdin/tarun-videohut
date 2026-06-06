@@ -1,73 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-const blogsData = [
-  {
-    category: "News",
-    title: "Unveiling StoryStream's Commitment to Sustainability: A Greener Approach to Video Production",
-    author: "David Smith",
-    date: "Oct 1, 2023",
-    image: "/assets/portfolio_1.png",
-    link: "#"
-  },
-  {
-    category: "News",
-    title: "StoryStream Gears Up for a Spectacular 2023: A Sneak Peek into Our Exciting Plans",
-    author: "John Davis",
-    date: "Oct 1, 2023",
-    image: "/assets/portfolio_2.png",
-    link: "#"
-  },
-  {
-    category: "Tips & Tricks",
-    title: "Video Marketing Magic: 10 Tips to Boost Your Brand's Success",
-    author: "Michael Carter",
-    date: "Oct 4, 2023",
-    image: "/assets/portfolio_3.png",
-    link: "#"
-  },
-  {
-    category: "News",
-    title: "StoryStream's Video Production Career Opportunities and Upcoming Event",
-    author: "Michael Carter",
-    date: "Aug 29, 2023",
-    image: "/assets/portfolio_4.png",
-    link: "#"
-  },
-  {
-    category: "Stories",
-    title: "From Script to Screen: The Journey of Crafting Compelling Video Stories",
-    author: "David Smith",
-    date: "Oct 8, 2023",
-    image: "/assets/portfolio_5.png",
-    link: "#"
-  },
-  {
-    category: "Tips & Tricks",
-    title: "The Visual Revolution: Unveiling the Profound Importance of Video Content",
-    author: "Robert Turner",
-    date: "Oct 6, 2023",
-    image: "/assets/portfolio_6.png",
-    link: "#"
-  },
-  {
-    category: "Tips & Tricks",
-    title: "Mastering the Art of Storytelling: The Power of Narrative in Video Production",
-    author: "Michael Carter",
-    date: "Oct 17, 2023",
-    image: "/assets/portfolio_1.png",
-    link: "#"
-  },
-  {
-    category: "Stories",
-    title: "Lights, Camera, Action! Behind the Scenes of a Video Production",
-    author: "John Davis",
-    date: "Oct 16, 2023",
-    image: "/assets/portfolio_2.png",
-    link: "#"
-  }
-];
+import { blogsData } from '../lib/blogsData';
 
 export default function Blogs() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -125,7 +59,7 @@ export default function Blogs() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <Link to={blog.link} className="group block h-full">
+              <Link to={`/blogs/${blog.slug}`} className="group block h-full">
                 <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden mb-6 border border-white/5">
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                   <img 

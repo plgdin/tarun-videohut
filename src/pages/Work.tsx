@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { projectsData } from '../lib/projectsData';
 
 const categories = ["All", "Commercial", "Documentary", "Corporate", "Short Film"];
 
-const projects = [
-  { id: 1, title: "GreenWaves", subtitle: "Eco-Warriors", category: "Documentary", img: "portfolio_1" },
-  { id: 2, title: "Mystic Horizons", subtitle: "ModeElite", category: "Commercial", img: "portfolio_2" },
-  { id: 3, title: "Pixel Fusion", subtitle: "Techno", category: "Corporate", img: "portfolio_3" },
-  { id: 4, title: "EcoExplorer", subtitle: "GreenEarth", category: "Documentary", img: "portfolio_1" },
-  { id: 5, title: "Urban Uplift", subtitle: "MetroScape", category: "Short Film", img: "portfolio_2" },
-  { id: 6, title: "Sonic Waves", subtitle: "AudioTech", category: "Commercial", img: "portfolio_3" },
-];
+// Only show first 6 projects on homepage featured section
+const projects = projectsData.slice(0, 6);
 
 export default function Work() {
   const [activeTab, setActiveTab] = useState("All");
