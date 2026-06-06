@@ -49,24 +49,24 @@ export default function Header() {
              </NavLink>
           </li>
           <li>
-             <Link to="#" className="hover:text-white transition-colors duration-300 border-b-2 border-transparent pb-1">
+             <NavLink to="/albums" className={({ isActive }) => cn("transition-colors duration-300 pb-1 border-b-2", isActive ? "text-brand-orange border-brand-orange" : "hover:text-white border-transparent")}>
                 Albums
-             </Link>
+             </NavLink>
           </li>
           <li>
-             <HashLink smooth to="/#about" className="hover:text-white transition-colors duration-300 border-b-2 border-transparent pb-1">
+             <NavLink to="/about" className={({ isActive }) => cn("transition-colors duration-300 pb-1 border-b-2", isActive ? "text-brand-orange border-brand-orange" : "hover:text-white border-transparent")}>
                 About
-             </HashLink>
+             </NavLink>
           </li>
           <li>
-             <HashLink smooth to="/#services" className="hover:text-white transition-colors duration-300 border-b-2 border-transparent pb-1">
+             <NavLink to="/services" className={({ isActive }) => `hover:text-white transition-colors duration-300 border-b-2 ${isActive ? 'border-brand-orange text-white' : 'border-transparent pb-1'}`}>
                 Services
-             </HashLink>
+             </NavLink>
           </li>
           <li>
-             <Link to="#" className="hover:text-white transition-colors duration-300 border-b-2 border-transparent pb-1">
+             <NavLink to="/blogs" className={({ isActive }) => `hover:text-white transition-colors duration-300 border-b-2 ${isActive ? 'border-brand-orange text-white' : 'border-transparent pb-1'}`}>
                 Blogs
-             </Link>
+             </NavLink>
           </li>
           <li>
              <HashLink smooth to="/#contact" className="hover:text-white transition-colors duration-300 border-b-2 border-transparent pb-1">

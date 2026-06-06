@@ -26,9 +26,10 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><HashLink smooth to="/#home" className="text-[15px] text-white/50 hover:text-white transition-colors">Home</HashLink></li>
               <li><Link to="/projects" className="text-[15px] text-white/50 hover:text-white transition-colors">Projects</Link></li>
-              <li><HashLink smooth to="/#about" className="text-[15px] text-white/50 hover:text-white transition-colors">About</HashLink></li>
-              <li><HashLink smooth to="/#services" className="text-[15px] text-white/50 hover:text-white transition-colors">Services</HashLink></li>
-              <li><HashLink smooth to="/#contact" className="text-[15px] text-white/50 hover:text-white transition-colors">Contact</HashLink></li>
+              <li><Link to="/about" className="text-[15px] text-white/50 hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/services" className="text-[15px] text-white/50 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/blogs" className="text-[15px] text-white/50 hover:text-white transition-colors">Blogs</Link></li>
+              <li><Link to="/contact" className="text-[15px] text-white/50 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 

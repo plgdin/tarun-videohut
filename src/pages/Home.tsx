@@ -1,5 +1,5 @@
 import Hero from './Hero'
-import Services from './Services'
+import ServicesSection from './ServicesSection'
 import Work from './Work'
 import WhyMe from './WhyMe'
 import Process from './Process'
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Services />
+      <ServicesSection />
       <Work />
       <WhyMe />
       <Process />
