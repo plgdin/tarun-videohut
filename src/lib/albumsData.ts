@@ -4,7 +4,7 @@ export interface AlbumDetailType {
   location: string;
   image: string;
   projectType: string;
-  client: string; // The reference site typo is "Clinet", but we will display "Client" in a premium way or map it
+  client: string;
   camera: string;
   lenses: string;
   equipment: string;
@@ -17,18 +17,18 @@ export const albumsData: AlbumDetailType[] = [
   {
     slug: "urban-chronicles",
     title: "Urban Chronicles",
-    location: "Streets of India",
-    image: "/assets/portfolio_1.png",
+    location: "Varanasi & Delhi, India",
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png",
     projectType: "Street Photography",
     client: "Indie Culture Mag",
     camera: "Sony A7R V",
     lenses: "FE 35mm f/1.4 GM",
     equipment: "Peak Design Travel Tripod",
-    year: "2023",
+    year: "2024",
     images: [
-      "/assets/portfolio_1.png",
-      "/assets/portfolio_2.png",
-      "/assets/portfolio_3.png"
+      "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/72f779210322387.Y3JvcCwxNjAwLDEyNTIsNjEwLDA.png"
     ],
     highlights: [
       "Captured active street dynamics during early sunrise in Varanasi.",
@@ -39,18 +39,18 @@ export const albumsData: AlbumDetailType[] = [
   {
     slug: "speed-demons",
     title: "Speed Demons",
-    location: "NASCAR Tracks",
-    image: "/assets/portfolio_2.png",
+    location: "NASCAR & Track Days",
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/5c8242235407827.Y3JvcCwxMzk4LDEwOTQsNTg1LDA.png",
     projectType: "Sports & Automotive",
     client: "Velocity Motorsports",
     camera: "Canon EOS R3",
     lenses: "RF 70-200mm f/2.8 L IS USM",
     equipment: "DJI Ronin 4D",
-    year: "2023",
+    year: "2024",
     images: [
-      "/assets/portfolio_2.png",
-      "/assets/portfolio_3.png",
-      "/assets/portfolio_1.png"
+      "https://mir-s3-cdn-cf.behance.net/projects/404/5c8242235407827.Y3JvcCwxMzk4LDEwOTQsNTg1LDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png"
     ],
     highlights: [
       "Panning photography at 1/30s at speeds exceeding 200 mph.",
@@ -62,17 +62,17 @@ export const albumsData: AlbumDetailType[] = [
     slug: "exploring-the-wonders-of-indonesia",
     title: "Exploring the Wonders of Indonesia",
     location: "Indonesia",
-    image: "/assets/portfolio_3.png",
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png",
     projectType: "Landscape & Travel",
     client: "Indonesia Tourism",
     camera: "Fujifilm GFX 100S",
     lenses: "GF 32-64mm f/4 R LM WR",
     equipment: "DJI Mavic 3 Pro",
-    year: "2023",
+    year: "2024",
     images: [
-      "/assets/portfolio_3.png",
-      "/assets/portfolio_4.png",
-      "/assets/portfolio_5.png"
+      "https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/8630eb157287825.Y3JvcCw8MDgsNjMyLDAsMA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/4d013d235102067.Y3JvcCwxNzAyLDEzMzIsNjQ0LDA.png"
     ],
     highlights: [
       "Sunrise captures of Mount Bromo with low-hanging fog beds.",
@@ -84,7 +84,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "thailand-a-photographic-odyssey",
     title: "Thailand: A Photographic Odyssey",
     location: "Thailand",
-    image: "/assets/portfolio_4.png",
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png",
     projectType: "Landscape & Culture",
     client: "Siam Travel Diaries",
     camera: "Sony A7 IV",
@@ -92,9 +92,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "Zhiyun Crane 4",
     year: "2023",
     images: [
-      "/assets/portfolio_4.png",
-      "/assets/portfolio_5.png",
-      "/assets/portfolio_1.png"
+      "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/5c3a1a198882905.Y3JvcCwyMTE3LDE2NTYsNTI5LDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/8630eb157287825.Y3JvcCw8MDgsNjMyLDAsMA.png"
     ],
     highlights: [
       "Night landscape of Bangkok's glowing street vendors.",
@@ -106,7 +106,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "faces-of-the-world-a-portrait-gallery",
     title: "Faces of the World: A Portrait Gallery",
     location: "Worldwide",
-    image: "/assets/portfolio_5.png",
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg",
     projectType: "Documentary Portraiture",
     client: "Global Humans Foundation",
     camera: "Hasselblad X2D 100C",
@@ -114,9 +114,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "Profoto A10 On-Camera Flash",
     year: "2023",
     images: [
-      "/assets/portfolio_5.png",
-      "/assets/portfolio_1.png",
-      "/assets/portfolio_2.png"
+      "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png",
+      "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
     ],
     highlights: [
       "High-fidelity medium format studio and natural lighting portraits.",

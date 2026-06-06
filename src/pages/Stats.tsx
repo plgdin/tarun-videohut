@@ -41,7 +41,7 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: 
 
   return (
     <div ref={counterRef} className="text-center">
-      <div className="text-[64px] md:text-[80px] font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-brand-orange to-brand-yellow mb-2 leading-none">
+      <div className="text-[64px] md:text-[80px] font-display font-black text-primary mb-2 leading-none">
         {count}{suffix}
       </div>
     </div>
@@ -50,24 +50,23 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number, suffix?: 
 
 export default function Stats() {
   return (
-    <section className="py-32 px-6 bg-[#0d0d0d] border-y border-white/5 relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/50" />
+    <section className="py-32 px-6 bg-black border-y border-white/5 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 relative z-10">
         <div className="text-center space-y-4">
-          <Counter end={15} suffix="+" />
-          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Years Experience</p>
+          <Counter end={8} suffix="+" />
+          <p className="text-white/50 font-display font-bold uppercase tracking-widest text-[11px]">Years Experience</p>
         </div>
         <div className="text-center space-y-4">
-          <Counter end={200} suffix="+" />
-          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Repeated Clients</p>
+          <Counter end={12} suffix="+" />
+          <p className="text-white/50 font-display font-bold uppercase tracking-widest text-[11px]">Major Brands</p>
         </div>
         <div className="text-center space-y-4">
-          <Counter end={478} />
-          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Projects Done</p>
+          <Counter end={50} suffix="+" />
+          <p className="text-white/50 font-display font-bold uppercase tracking-widest text-[11px]">Films Directed</p>
         </div>
         <div className="text-center space-y-4">
-          <Counter end={350} suffix="+" />
-          <p className="text-white/50 font-bold uppercase tracking-widest text-[13px]">Happy Clients</p>
+          <Counter end={20} suffix="+" />
+          <p className="text-white/50 font-display font-bold uppercase tracking-widest text-[11px]">Stage Plays</p>
         </div>
       </div>
     </section>

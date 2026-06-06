@@ -21,7 +21,7 @@ function AppContent() {
     location.pathname.startsWith('/photo-albums/');
 
   return (
-    <div className="min-h-screen bg-[#0d0d0d] text-white flex flex-col justify-between">
+    <div className="min-h-screen bg-black text-white flex flex-col justify-between">
       <ScrollToTop />
       <div>
         <Header />

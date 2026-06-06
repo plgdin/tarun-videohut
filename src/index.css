@@ -4,7 +4,7 @@
   --font-sans: "Inter", sans-serif;
   --font-display: "Antonio", "Impact", sans-serif;
   
-  /* Map original theme color keys to Pulp Fiction slots */
+  /* Map original theme variables seamlessly to Pulp Fiction slots */
   --color-brand-orange: hsl(var(--primary));
   --color-brand-yellow: hsl(var(--accent));
   --color-brand-teal: hsl(var(--muted-foreground));
@@ -62,54 +62,62 @@
   --animate-marquee: marquee 35s linear infinite;
 }
 
-/* Pulp Fiction design variables explicitly ported over */
+/* Pulp Fiction design system explicitly ported over */
 @layer base {
   :root {
     /* Deep cinematic background black */
     --background: 0 0% 0%;
-    /* Golden Yellow Pulp Foreground */
+    /* #F5D467 Golden Yellow Pulp Foreground */
     --foreground: 46 89% 68%;
 
-    /* Dark overlays and glass modules */
+    /* Cards with dark overlay */
     --card: 220 10% 12%;
     --card-foreground: 46 89% 68%;
 
+    /* Popover matching cards */
     --popover: 220 10% 11%;
     --popover-foreground: 46 89% 68%;
 
-    /* Primary Golden Yellow Core Accent */
+    /* Primary - Golden Yellow Core */
     --primary: 46 89% 68%;
     --primary-foreground: 0 0% 0%;
 
+    /* Secondary - Dark gray */
     --secondary: 220 9% 18%;
     --secondary-foreground: 46 89% 68%;
 
+    /* Muted tones */
     --muted: 220 8% 14%;
     --muted-foreground: 46 40% 50%;
 
+    /* Accent - Lighter golden */
     --accent: 46 95% 75%;
     --accent-foreground: 0 0% 0%;
 
+    /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
+    /* Borders and inputs */
     --border: 220 8% 24%;
     --input: 220 8% 18%;
     --ring: 46 89% 68%;
 
     --radius: 0.25rem;
 
-    /* Cinematic Light maps & gradients */
+    /* Hero gradients */
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 0%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 10% / 0.8) 0%, hsl(0 0% 0%) 100%);
     --gradient-overlay: linear-gradient(0deg, hsl(0 0% 0%) 0%, transparent 100%);
 
+    /* Shadows & Glows */
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.6);
     --shadow-glow: 0 0 30px hsl(46 89% 68% / 0.4);
     --dynamic-primary-rgb: 255 205 82;
     --dynamic-secondary-rgb: 245 101 72;
     --dynamic-highlight-rgb: 255 244 205;
 
+    /* Sidebar controls */
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 46 89% 68%;
     --sidebar-primary: 46 89% 68%;
@@ -120,6 +128,7 @@
     --sidebar-ring: 46 89% 68%;
   }
 
+  /* No alternative light mode - this theme IS the dark mode */
   .dark {
     --background: 220 12% 10%;
     --foreground: 46 89% 68%;
@@ -148,8 +157,8 @@
     border-color: hsl(var(--border));
   }
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
     font-family: var(--font-body, Inter, system-ui, sans-serif);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -213,7 +222,7 @@
   .scrollbar-hide { scrollbar-width: none; }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
 
-  /* Hero specialized fluid dynamics animations */
+  /* Fluid dynamics hero animations */
   .hero-synced-aura-left {
     background: radial-gradient(circle, rgb(var(--hero-accent-soft) / 0.18) 0%, rgb(var(--hero-accent) / 0.1) 38%, transparent 72%);
     animation: hero-aura-float-left 16s ease-in-out infinite;
@@ -231,7 +240,7 @@
     animation: hero-gradient-flow 12s ease-in-out infinite;
   }
 
-  /* Structural wrappers for layout matching card transformation effects */
+  /* Transformation effect structural layouts */
   .vc-wrapper {
     position: relative;
     flex-shrink: 0;

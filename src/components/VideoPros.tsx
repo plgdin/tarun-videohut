@@ -2,63 +2,63 @@ import { motion } from 'framer-motion';
 
 const industries = [
   {
-    title: "Corporate Videos",
+    title: "Ad Films",
     size: "md:col-span-2 h-[320px]",
-    image: "/assets/portfolio_1.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png"
   },
   {
     title: "Documentaries",
     size: "md:col-span-1 h-[320px]",
-    image: "/assets/portfolio_2.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png"
   },
   {
-    title: "Shorts & Reels",
+    title: "Stage Plays",
     size: "md:col-span-1 h-[320px]",
-    image: "/assets/portfolio_3.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg"
   },
   {
-    title: "Entertainment",
+    title: "Brand Campaigns",
     size: "md:col-span-2 h-[320px]",
-    image: "/assets/portfolio_4.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
   },
   {
-    title: "Commercials",
+    title: "Cinematography",
     size: "md:col-span-1 h-[320px]",
-    image: "/assets/portfolio_5.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png"
   },
   {
-    title: "Event & Live Stream",
+    title: "Screenplay Writing",
     size: "md:col-span-1 h-[320px]",
-    image: "/assets/portfolio_1.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png"
   },
   {
-    title: "Animation & VFX",
+    title: "Concept Treatments",
     size: "md:col-span-2 h-[320px]",
-    image: "/assets/portfolio_2.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/72f779210322387.Y3JvcCwxNjAwLDEyNTIsNjEwLDA.png"
   }
 ];
 
 export default function VideoPros() {
   return (
-    <section className="py-32 px-6 bg-[#0a0a0a]">
+    <section className="py-32 px-6 bg-black border-t border-white/5">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-20 space-y-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full border border-brand-teal/20 bg-brand-teal/5 text-brand-teal text-[13px] font-medium tracking-wide uppercase"
+            className="inline-block px-4 py-2 rounded-sm border border-primary/20 bg-primary/5 text-primary text-[13px] font-display font-bold tracking-widest uppercase"
           >
-            Expertise
+            Directorial Formats
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[40px] md:text-[56px] font-display font-bold leading-tight"
+            className="text-[40px] md:text-[56px] font-display font-bold leading-tight uppercase text-primary"
           >
-            Video Pros in Many Industries
+            Aesthetic Focus
           </motion.h2>
         </div>
 
@@ -71,7 +71,7 @@ export default function VideoPros() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.05 }}
-              className={`${ind.size} rounded-[32px] overflow-hidden border border-white/5 relative group cursor-pointer`}
+              className={`${ind.size} rounded-sm overflow-hidden border border-white/5 relative group cursor-pointer video-card`}
             >
               {/* Background image */}
               <div className="absolute inset-0 z-0">
@@ -80,7 +80,7 @@ export default function VideoPros() {
                   alt={ind.title} 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-[0.7]"
                   onError={(e) => {
-                    e.currentTarget.src = "/assets/portfolio_1.png";
+                    e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
                   }}
                 />
                 {/* Gradient overlay */}
@@ -89,7 +89,7 @@ export default function VideoPros() {
 
               {/* Title Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
-                <h3 className="text-2xl font-display font-bold text-white group-hover:text-brand-orange transition-colors">
+                <h3 className="text-2xl font-display font-bold text-white group-hover:text-primary transition-colors uppercase tracking-tight">
                   {ind.title}
                 </h3>
               </div>
