@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { NavLink, Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
@@ -49,24 +48,24 @@ export default function Header() {
       >
         <nav
           className={cn(
-            "flex items-center justify-between px-6 py-4 rounded-[44px] transition-all duration-500 w-full max-w-[1200px] bg-[#0d0d0d]/40 backdrop-blur-[12px] border border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]",
+            "flex items-center justify-between px-8 py-5 rounded-[50px] transition-all duration-500 w-full max-w-[1300px] bg-[#0d0d0d]/40 backdrop-blur-[12px] border border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]",
             scrolled && "bg-[#0d0d0d]/80 border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.8)]"
           )}
         >
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center shadow-[0_0_20px_rgba(255,122,59,0.3)]">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Link to="/" className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-brand-orange flex items-center justify-center shadow-[0_0_20px_rgba(255,122,59,0.3)] shrink-0">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2L2 22h20L12 2z" fill="black" />
               </svg>
             </div>
             <div className="flex flex-col">
-               <span className="font-display font-bold text-[20px] tracking-tight text-white leading-none">StoryStream</span>
-               <span className="font-display text-[10px] tracking-[0.15em] text-white/60 leading-none mt-1">STUDIOS</span>
+               <span className="font-display font-bold text-[24px] tracking-tight text-white leading-none">StoryStream</span>
+               <span className="font-display text-[12px] tracking-[0.15em] text-white/60 leading-none mt-1">STUDIOS</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-display font-semibold tracking-[-0.05em] text-white/80">
+          <ul className="hidden lg:flex items-center gap-8 xl:gap-10 text-[18px] font-display font-semibold tracking-wide text-white/80">
             {navItems.map((item) => (
               <li key={item.to}>
                 <NavLink 
@@ -84,21 +83,13 @@ export default function Header() {
           </ul>
 
           <div className="flex items-center gap-4">
-            <HashLink 
-              smooth
-              to="/#pricing" 
-              className="hidden sm:inline-block bg-white text-black px-6 py-3 rounded-full text-[15px] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"
-            >
-              Get Template
-            </HashLink>
-
             {/* Mobile Hamburger */}
             <button 
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </nav>
@@ -165,18 +156,6 @@ export default function Header() {
                   ))}
                 </ul>
               </nav>
-
-              {/* Drawer Footer CTA */}
-              <div className="px-6 py-6 border-t border-white/5">
-                <HashLink 
-                  smooth
-                  to="/#pricing"
-                  onClick={closeMobile}
-                  className="block w-full text-center bg-brand-orange text-white px-6 py-4 rounded-full text-[15px] font-bold hover:bg-brand-yellow transition-all duration-300"
-                >
-                  Get Template
-                </HashLink>
-              </div>
             </motion.div>
           </>
         )}
