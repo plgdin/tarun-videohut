@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { projectsData } from '../lib/projectsData';
+import { VideoPlayer } from '../components/ui/video-thumbnail-player';
 
 const categories = ["All", "Ad Films", "Music Videos", "Brand Films", "Short Films"];
 
@@ -101,7 +102,7 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* Projects Catalog Grid */}
+        {/* Projects Catalog Grid — VideoPlayer cards */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
@@ -112,35 +113,14 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 key={project.id} 
-                className="group cursor-pointer"
               >
-                <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 relative bg-[#0d0d0d] border border-white/5 video-card shadow-lg">
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500 z-10" />
-                  
-                  {/* Category & Year Badge on hover */}
-                  <div className="absolute top-6 left-6 z-20 opacity-0 group-hover:opacity-100 transform -translate-y-4 group-hover:translate-y-0 transition-all duration-500 flex gap-2">
-                    <span className="px-3 py-1.5 bg-black/85 text-primary rounded-sm border border-primary/20 text-[11px] font-display font-bold uppercase tracking-wider">
-                      {project.category}
-                    </span>
-                    <span className="px-3 py-1.5 bg-black/85 text-white rounded-sm border border-white/10 text-[11px] font-body font-medium">
-                      {project.year}
-                    </span>
-                  </div>
-
-                  <img 
-                    src={project.img} 
-                    alt={project.title} 
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
-                    }}
-                  />
-                </div>
-                <div className="space-y-1 px-1">
-                  <h3 className="text-[26px] font-display font-bold text-primary group-hover:text-accent transition-colors tracking-tight uppercase leading-tight">{project.title}</h3>
-                  <p className="text-white/50 text-[14px] font-body font-light tracking-wide">{project.subtitle}</p>
-                </div>
+                <VideoPlayer
+                  thumbnailUrl={project.img}
+                  videoUrl={project.videoUrl || "https://vz-dadaa479-fe6.b-cdn.net/6a889e8c-7d03-44de-938d-1c5a7ddd2e0b/play_720p.mp4"}
+                  title={project.title}
+                  description={`${project.subtitle} · ${project.year}`}
+                  className="border border-white/5 rounded-sm"
+                />
               </motion.div>
             ))}
           </AnimatePresence>
