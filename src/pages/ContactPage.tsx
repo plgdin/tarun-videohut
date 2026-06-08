@@ -110,36 +110,37 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Right: Contact Form */}
+            {/* Right: Booking & Rep Card */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-card p-10 md:p-14 rounded-sm border border-border shadow-2xl"
+              className="bg-card p-10 md:p-14 rounded-sm border border-border shadow-2xl flex flex-col justify-center space-y-8"
             >
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-display font-bold text-white/60 uppercase tracking-widest">Name</label>
-                    <input type="text" className="w-full bg-muted border border-border rounded-sm px-6 py-4 text-[15px] text-white focus:outline-none focus:border-primary focus:bg-transparent transition-all duration-300 placeholder:text-white/20" placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-display font-bold text-white/60 uppercase tracking-widest">Email</label>
-                    <input type="email" className="w-full bg-muted border border-border rounded-sm px-6 py-4 text-[15px] text-white focus:outline-none focus:border-primary focus:bg-transparent transition-all duration-300 placeholder:text-white/20" placeholder="john@example.com" />
-                  </div>
+              <div className="space-y-4">
+                <span className="text-primary font-display font-bold text-[12px] tracking-[0.2em] uppercase">Representative & Booking</span>
+                <h3 className="text-[32px] md:text-[40px] font-display font-bold leading-tight uppercase text-white">Let's Collaborate</h3>
+                <p className="text-white/60 font-body font-light leading-relaxed">
+                  For script submissions, treatment pitches, and commercial availability, please contact directly.
+                </p>
+              </div>
+
+              <div className="space-y-6 pt-6 border-t border-border">
+                <div>
+                  <h4 className="font-display font-bold text-[14px] text-white/50 tracking-wider uppercase mb-1">Direct Inquiries</h4>
+                  <a href="mailto:contact@tarunkapoor.com" className="text-primary hover:text-accent text-[20px] md:text-[24px] font-display font-bold transition-colors">
+                    contact@tarunkapoor.com
+                  </a>
                 </div>
-                <div className="space-y-3">
-                  <label className="text-[11px] font-display font-bold text-white/60 uppercase tracking-widest">Phone</label>
-                  <input type="tel" className="w-full bg-muted border border-border rounded-sm px-6 py-4 text-[15px] text-white focus:outline-none focus:border-primary focus:bg-transparent transition-all duration-300 placeholder:text-white/20" placeholder="+91 99000 00000" />
+
+                <div>
+                  <h4 className="font-display font-bold text-[14px] text-white/50 tracking-wider uppercase mb-1">Commercial Representation</h4>
+                  <p className="text-white text-[16px] font-body font-medium">videohut Media Agencies</p>
+                  <a href="mailto:representation@tarunkapoor.com" className="text-primary hover:text-accent text-[16px] font-body transition-colors">
+                    representation@tarunkapoor.com
+                  </a>
                 </div>
-                <div className="space-y-3">
-                  <label className="text-[11px] font-display font-bold text-white/60 uppercase tracking-widest">Message</label>
-                  <textarea rows={5} className="w-full bg-muted border border-border rounded-sm px-6 py-4 text-[15px] text-white focus:outline-none focus:border-primary focus:bg-transparent transition-all duration-300 resize-none placeholder:text-white/20" placeholder="Tell us about your project..."></textarea>
-                </div>
-                <button type="button" className="w-full bg-primary hover:bg-accent text-black font-display font-bold py-5 rounded-sm transition-all duration-300 transform active:scale-95 text-[14px] tracking-widest uppercase shadow-glow">
-                  Send Message
-                </button>
-              </form>
+              </div>
             </motion.div>
           </div>
         </section>

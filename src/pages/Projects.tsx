@@ -36,7 +36,7 @@ export default function Projects() {
           />
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-6 w-full relative z-20 pt-32 md:pt-40">
+        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-20 pt-32 md:pt-40">
           <div className="max-w-[700px] space-y-6">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -77,7 +77,7 @@ export default function Projects() {
       </section>
 
       {/* Portfolio Grid Section */}
-      <section className="py-20 px-6 max-w-[1400px] mx-auto">
+      <section className="py-20 px-6 max-w-[1200px] mx-auto">
         
         {/* Filter Pills */}
         <motion.div 
@@ -102,7 +102,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Catalog Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div 
@@ -128,11 +128,12 @@ export default function Projects() {
                   </div>
 
                   <img 
-                    src={project.img.startsWith('http') ? project.img : `/assets/${project.img}.png`} 
+                    src={project.img} 
                     alt={project.title} 
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     onError={(e) => {
-                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_1200/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
+                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
                     }}
                   />
                 </div>

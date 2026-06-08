@@ -20,7 +20,7 @@ export default function Work() {
       {/* Decorative background light leaks */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-6">
             <motion.div 
@@ -73,7 +73,7 @@ export default function Work() {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div 
@@ -99,11 +99,12 @@ export default function Work() {
                   </div>
 
                   <img 
-                    src={project.img.startsWith('http') ? project.img : `/assets/${project.img}.png`} 
+                    src={project.img} 
                     alt={project.title} 
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     onError={(e) => {
-                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_1200/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
+                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
                     }}
                   />
                 </div>
