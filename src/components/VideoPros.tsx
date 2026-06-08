@@ -4,37 +4,37 @@ const industries = [
   {
     title: "Ad Films",
     size: "md:col-span-2 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png"
   },
   {
     title: "Documentaries",
     size: "md:col-span-1 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png"
   },
   {
     title: "Stage Plays",
     size: "md:col-span-1 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg"
   },
   {
     title: "Brand Campaigns",
     size: "md:col-span-2 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
   },
   {
     title: "Cinematography",
     size: "md:col-span-1 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png"
   },
   {
     title: "Screenplay Writing",
     size: "md:col-span-1 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png"
   },
   {
     title: "Concept Treatments",
     size: "md:col-span-2 h-[320px]",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/72f779210322387.Y3JvcCwxNjAwLDEyNTIsNjEwLDA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/72f779210322387.Y3JvcCwxNjAwLDEyNTIsNjEwLDA.png"
   }
 ];
 

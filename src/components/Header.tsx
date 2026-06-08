@@ -9,8 +9,6 @@ const navItems = [
   { to: "/projects", label: "Projects", isHash: false },
   { to: "/albums", label: "Albums", isHash: false },
   { to: "/about", label: "About", isHash: false },
-  { to: "/services", label: "Services", isHash: false },
-  { to: "/blogs", label: "Blogs", isHash: false },
   { to: "/contact", label: "Contact", isHash: false },
 ];
 
@@ -43,12 +41,17 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6"
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300",
+          scrolled ? "pt-0 px-0" : "pt-0 px-0 md:pt-6 md:px-4"
+        )}
       >
         <nav
           className={cn(
-            "flex items-center justify-between px-8 py-5 rounded-none transition-all duration-500 w-full max-w-[1300px] bg-black/40 backdrop-blur-[12px] border-b-2 border-primary shadow-[0_8px_32px_rgba(0,0,0,0.6)]",
-            scrolled && "bg-black/90 border-b-2 border-accent"
+            "flex items-center justify-between px-6 md:px-8 py-4 md:py-5 rounded-none transition-all duration-500 w-full bg-black/40 backdrop-blur-[12px] border-b-2 border-primary shadow-[0_8px_32px_rgba(0,0,0,0.6)]",
+            scrolled 
+              ? "bg-black/95 border-b border-accent py-3.5 max-w-full" 
+              : "max-w-full md:max-w-[1300px]"
           )}
         >
           <Link to="/" className="flex items-center gap-4">

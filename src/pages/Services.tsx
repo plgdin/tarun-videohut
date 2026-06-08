@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Faq from '../components/Faq';
 
 const preProduction = [
   { title: "Directorial Treatment", desc: "Crafting a unique aesthetic vision, mood boards, and thematic treatments that define the look, feel, and pacing of the campaign." },
@@ -49,7 +48,7 @@ export default function Services() {
       <section ref={heroRef} className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden mx-2 md:mx-4 mb-24 md:mb-32 border-b border-white/5">
         <motion.div style={{ y }} className="absolute inset-0 z-0">
           <img 
-            src="https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png" 
+            src="https://mir-s3-cdn-cf.behance.net/projects/max_808/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png" 
             alt="Video Production Services" 
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none absolute inset-0"
           />
@@ -184,8 +183,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* FAQs Section */}
-      <Faq />
     </main>
   );
 }

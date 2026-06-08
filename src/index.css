@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-display: "Antonio", "Impact", sans-serif;
+  --font-sans: "Poppins", "Inter", sans-serif;
+  --font-display: "Fjalla One", "Antonio", "Impact", sans-serif;
   
   /* Map original theme variables seamlessly to Pulp Fiction slots */
   --color-brand-orange: hsl(var(--primary));
@@ -62,93 +62,93 @@
   --animate-marquee: marquee 35s linear infinite;
 }
 
-/* Pulp Fiction design system explicitly ported over */
+/* Director's Minimalist Cinema Red & Carbon design system explicitly ported over */
 @layer base {
   :root {
-    /* Deep cinematic background black */
-    --background: 0 0% 0%;
-    /* #F5D467 Golden Yellow Pulp Foreground */
-    --foreground: 46 89% 68%;
+    /* Deep cinematic carbon background */
+    --background: 240 6% 4%; /* #0a0a0c */
+    /* Crisp milk-white foreground */
+    --foreground: 210 20% 98%;
 
-    /* Cards with dark overlay */
-    --card: 220 10% 12%;
-    --card-foreground: 46 89% 68%;
+    /* Cards with charcoal overlay */
+    --card: 240 5% 8%; /* #121214 */
+    --card-foreground: 210 20% 98%;
 
     /* Popover matching cards */
-    --popover: 220 10% 11%;
-    --popover-foreground: 46 89% 68%;
+    --popover: 240 5% 7%;
+    --popover-foreground: 210 20% 98%;
 
-    /* Primary - Golden Yellow Core */
-    --primary: 46 89% 68%;
-    --primary-foreground: 0 0% 0%;
+    /* Primary - Cinema Red (REC red / Leica red) */
+    --primary: 357 80% 46%; /* #e50914 */
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Dark gray */
-    --secondary: 220 9% 18%;
-    --secondary-foreground: 46 89% 68%;
+    /* Secondary - Crimson Accent / Velvet Red */
+    --secondary: 357 70% 30%; /* #821014 */
+    --secondary-foreground: 0 0% 100%;
 
     /* Muted tones */
-    --muted: 220 8% 14%;
-    --muted-foreground: 46 40% 50%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 60%;
 
-    /* Accent - Lighter golden */
-    --accent: 46 95% 75%;
-    --accent-foreground: 0 0% 0%;
+    /* Accent - Bright Ruby/Coral Red */
+    --accent: 357 90% 65%; /* #f87171 */
+    --accent-foreground: 0 0% 100%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 220 8% 24%;
-    --input: 220 8% 18%;
-    --ring: 46 89% 68%;
+    --border: 240 5% 16%;
+    --input: 240 5% 12%;
+    --ring: 357 80% 46%;
 
     --radius: 0.25rem;
 
     /* Hero gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 0%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 10% / 0.8) 0%, hsl(0 0% 0%) 100%);
-    --gradient-overlay: linear-gradient(0deg, hsl(0 0% 0%) 0%, transparent 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 5% 8%) 0%, hsl(240 6% 4%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(240 5% 10% / 0.8) 0%, hsl(240 6% 4%) 100%);
+    --gradient-overlay: linear-gradient(0deg, hsl(240 6% 4%) 0%, transparent 100%);
 
     /* Shadows & Glows */
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.6);
-    --shadow-glow: 0 0 30px hsl(46 89% 68% / 0.4);
-    --dynamic-primary-rgb: 255 205 82;
-    --dynamic-secondary-rgb: 245 101 72;
-    --dynamic-highlight-rgb: 255 244 205;
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 30px hsl(357 80% 46% / 0.2);
+    --dynamic-primary-rgb: 229 9 20;
+    --dynamic-secondary-rgb: 130 16 20;
+    --dynamic-highlight-rgb: 248 113 113;
 
     /* Sidebar controls */
-    --sidebar-background: 0 0% 3%;
-    --sidebar-foreground: 46 89% 68%;
-    --sidebar-primary: 46 89% 68%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 46 89% 68%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 46 89% 68%;
+    --sidebar-background: 240 6% 2%;
+    --sidebar-foreground: 357 80% 46%;
+    --sidebar-primary: 357 80% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 10%;
+    --sidebar-accent-foreground: 357 80% 46%;
+    --sidebar-border: 240 5% 14%;
+    --sidebar-ring: 357 80% 46%;
   }
 
-  /* No alternative light mode - this theme IS the dark mode */
+  /* Dark class configuration */
   .dark {
-    --background: 220 12% 10%;
-    --foreground: 46 89% 68%;
-    --card: 220 10% 12%;
-    --card-foreground: 46 89% 68%;
-    --popover: 220 10% 11%;
-    --popover-foreground: 46 89% 68%;
-    --primary: 46 89% 68%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 220 9% 18%;
-    --secondary-foreground: 46 89% 68%;
-    --muted: 220 8% 14%;
-    --muted-foreground: 46 40% 50%;
-    --accent: 46 95% 75%;
-    --accent-foreground: 0 0% 0%;
+    --background: 240 6% 4%;
+    --foreground: 210 20% 98%;
+    --card: 240 5% 8%;
+    --card-foreground: 210 20% 98%;
+    --popover: 240 5% 7%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 357 80% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 357 70% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 357 90% 65%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 8% 24%;
-    --input: 220 8% 18%;
-    --ring: 46 89% 68%;
+    --border: 240 5% 16%;
+    --input: 240 5% 12%;
+    --ring: 357 80% 46%;
   }
 }
 
@@ -172,9 +172,9 @@
       box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .font-display {
-    font-family: var(--font-title, 'Antonio'), sans-serif;
+    font-family: var(--font-display), sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
   .text-shadow-cinematic {
     text-shadow:
@@ -306,7 +306,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: radial-gradient(circle at center, rgba(120, 77, 11, 0.18), transparent 18%), #000;
+  background: radial-gradient(circle at center, rgba(229, 9, 20, 0.18), transparent 18%), #0a0a0c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,7 +315,7 @@
   font-family: 'Bebas Neue', Impact, sans-serif;
   font-size: clamp(3.15rem, 12vw, 4.9rem);
   text-transform: uppercase;
-  color: #ffd700;
+  color: #e50914;
   letter-spacing: 0.1em;
-  text-shadow: 0 0 24px rgba(255, 205, 70, 0.8);
+  text-shadow: 0 0 24px rgba(229, 9, 20, 0.8);
 }

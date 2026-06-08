@@ -19,7 +19,7 @@ export default function Blogs() {
       <section ref={heroRef} className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden mx-2 md:mx-4 mb-24 md:mb-32 border-b border-white/5">
         <motion.div style={{ y }} className="absolute inset-0 z-0">
           <img 
-            src="https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png" 
+            src="https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png" 
             alt="Blogs Hero" 
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none absolute inset-0"
           />

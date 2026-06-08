@@ -3,7 +3,7 @@ import { MapPin, Mail } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 bg-black border-t border-white/5 relative overflow-hidden">
+    <section id="contact" className="pt-40 md:pt-48 pb-32 px-6 bg-black border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">

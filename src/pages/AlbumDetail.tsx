@@ -107,7 +107,7 @@ export default function AlbumDetail() {
                   alt={`${album.title} gallery shot ${idx + 1}`}
                   className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
+                  e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
                 }}
                 />
               </motion.div>

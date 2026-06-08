@@ -18,7 +18,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "urban-chronicles",
     title: "Urban Chronicles",
     location: "Varanasi & Delhi, India",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png",
+    image: "https://images.unsplash.com/photo-1561350111-7daa4f284bc6?auto=format&fit=crop&w=1200&q=80",
     projectType: "Street Photography",
     client: "Indie Culture Mag",
     camera: "Sony A7R V",
@@ -26,9 +26,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "Peak Design Travel Tripod",
     year: "2024",
     images: [
-      "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/72f779210322387.Y3JvcCwxNjAwLDEyNTIsNjEwLDA.png"
+      "https://images.unsplash.com/photo-1561350111-7daa4f284bc6?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1477587458883-471a5ed08ff4?auto=format&fit=crop&w=1200&q=80"
     ],
     highlights: [
       "Captured active street dynamics during early sunrise in Varanasi.",
@@ -40,7 +40,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "speed-demons",
     title: "Speed Demons",
     location: "NASCAR & Track Days",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/5c8242235407827.Y3JvcCwxMzk4LDEwOTQsNTg1LDA.png",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80",
     projectType: "Sports & Automotive",
     client: "Velocity Motorsports",
     camera: "Canon EOS R3",
@@ -48,9 +48,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "DJI Ronin 4D",
     year: "2024",
     images: [
-      "https://mir-s3-cdn-cf.behance.net/projects/404/5c8242235407827.Y3JvcCwxMzk4LDEwOTQsNTg1LDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png"
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80"
     ],
     highlights: [
       "Panning photography at 1/30s at speeds exceeding 200 mph.",
@@ -62,7 +62,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "exploring-the-wonders-of-indonesia",
     title: "Exploring the Wonders of Indonesia",
     location: "Indonesia",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png",
+    image: "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1200&q=80",
     projectType: "Landscape & Travel",
     client: "Indonesia Tourism",
     camera: "Fujifilm GFX 100S",
@@ -70,9 +70,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "DJI Mavic 3 Pro",
     year: "2024",
     images: [
-      "https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/8630eb157287825.Y3JvcCw8MDgsNjMyLDAsMA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/4d013d235102067.Y3JvcCwxNzAyLDEzMzIsNjQ0LDA.png"
+      "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&w=1200&q=80"
     ],
     highlights: [
       "Sunrise captures of Mount Bromo with low-hanging fog beds.",
@@ -84,7 +84,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "thailand-a-photographic-odyssey",
     title: "Thailand: A Photographic Odyssey",
     location: "Thailand",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png",
+    image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80",
     projectType: "Landscape & Culture",
     client: "Siam Travel Diaries",
     camera: "Sony A7 IV",
@@ -92,9 +92,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "Zhiyun Crane 4",
     year: "2023",
     images: [
-      "https://mir-s3-cdn-cf.behance.net/projects/404/40058f213299753.Y3JvcCwxODkyLDE0ODAsNDkxLDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/5c3a1a198882905.Y3JvcCwyMTE3LDE2NTYsNTI5LDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/8630eb157287825.Y3JvcCw8MDgsNjMyLDAsMA.png"
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=1200&q=80"
     ],
     highlights: [
       "Night landscape of Bangkok's glowing street vendors.",
@@ -106,7 +106,7 @@ export const albumsData: AlbumDetailType[] = [
     slug: "faces-of-the-world-a-portrait-gallery",
     title: "Faces of the World: A Portrait Gallery",
     location: "Worldwide",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
     projectType: "Documentary Portraiture",
     client: "Global Humans Foundation",
     camera: "Hasselblad X2D 100C",
@@ -114,9 +114,9 @@ export const albumsData: AlbumDetailType[] = [
     equipment: "Profoto A10 On-Camera Flash",
     year: "2023",
     images: [
-      "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/50d2bf210324995.Y3JvcCwyMDUzLDE2MDYsNDE2LDA.png",
-      "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80"
     ],
     highlights: [
       "High-fidelity medium format studio and natural lighting portraits.",

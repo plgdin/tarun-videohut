@@ -1,116 +1,207 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight, MapPin, Camera } from 'lucide-react';
 import { albumsData } from '../lib/albumsData';
 
 export default function Albums() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
+  const [currentPage, setCurrentPage] = useState(1);
+  const numOfPages = albumsData.length;
+  const animTime = 1000;
+  const scrolling = useRef(false);
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const navigateUp = () => {
+    if (currentPage > 1) setCurrentPage(p => p - 1);
+  };
+
+  const navigateDown = () => {
+    if (currentPage < numOfPages) setCurrentPage(p => p + 1);
+  };
+
+  const handleWheel = (e: WheelEvent) => {
+    if (e.cancelable) e.preventDefault();
+    if (scrolling.current) return;
+    scrolling.current = true;
+    e.deltaY > 0 ? navigateDown() : navigateUp();
+    setTimeout(() => (scrolling.current = false), animTime);
+  };
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (scrolling.current) return;
+    if (e.key === 'ArrowUp') {
+      scrolling.current = true;
+      navigateUp();
+      setTimeout(() => (scrolling.current = false), animTime);
+    } else if (e.key === 'ArrowDown') {
+      scrolling.current = true;
+      navigateDown();
+      setTimeout(() => (scrolling.current = false), animTime);
+    }
+  };
+
+  useEffect(() => {
+    // Lock body scrolling when full-page slider is active
+    document.body.style.overflow = 'hidden';
+    
+    // Add wheel event listener with passive: false to allow preventDefault
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [currentPage]);
 
   return (
-    <main className="w-full bg-black text-white">
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative w-full h-[80vh] min-h-[600px] flex items-center bg-black overflow-hidden mb-20 border-b border-white/5">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black z-10" />
-          <motion.img 
-            style={{ y, opacity }}
-            src="https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png" 
-            alt="Albums background" 
-            className="w-full h-full object-cover object-center opacity-30 select-none pointer-events-none absolute inset-0"
-          />
-        </div>
+    <main className="relative overflow-hidden h-screen w-full bg-black">
+      {albumsData.map((album, i) => {
+        const idx = i + 1;
+        const isActive = currentPage === idx;
+        const upOff = 'translateY(-100%)';
+        const downOff = 'translateY(100%)';
+        
+        // Alternating split screen:
+        // Even indices (0, 2, 4): Image on Left, Content on Right
+        // Odd indices (1, 3): Content on Left, Image on Right
+        const isLeftImage = i % 2 === 0;
+        
+        const leftTrans = isActive ? 'translateY(0)' : downOff;
+        const rightTrans = isActive ? 'translateY(0)' : upOff;
+        const bgImage = album.image;
 
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-20 pt-20">
-          <div className="max-w-[700px] space-y-6">
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[64px] md:text-[96px] font-display font-bold leading-[1] tracking-tight text-primary uppercase"
+        return (
+          <div 
+            key={album.slug} 
+            className={`absolute inset-0 w-full h-full flex transition-opacity duration-1000 ${
+              isActive ? 'opacity-100 z-20 pointer-events-auto' : 'opacity-0 z-10 pointer-events-none'
+            }`}
+          >
+            {/* Left Column */}
+            <div
+              className="absolute top-0 left-0 w-full md:w-1/2 h-1/2 md:h-full transition-transform duration-[1000ms] ease-in-out z-10"
+              style={{ transform: leftTrans }}
             >
-              Photo Albums
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[18px] md:text-[20px] text-white/70 leading-[1.6] font-light max-w-[600px] font-body"
-            >
-              Compelling visual captures, framing moments of street life, high speeds, and character portraits.
-            </motion.p>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute left-6 md:left-12 bottom-20 z-20 flex flex-col items-center gap-6"
-        >
-          <span className="text-[11px] font-bold tracking-[0.3em] text-white uppercase rotate-90 origin-left translate-x-3 font-display">Scroll</span>
-          <div className="w-[1px] h-16 bg-white/20 relative overflow-hidden mt-6">
-            <motion.div 
-              animate={{ y: [0, 64] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-              className="absolute top-0 left-0 w-full h-1/2 bg-primary"
-            />
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Grid Section */}
-      <section className="w-full max-w-[1200px] mx-auto px-6 pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {albumsData.map((album, i) => (
-            <motion.div
-              key={album.slug}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
-            >
-              <Link to={`/photo-albums/${album.slug}`} className="group cursor-pointer block">
-                <div className="w-full rounded-sm overflow-hidden mb-6 aspect-[4/3] bg-[#0d0d0d] border border-white/5 relative video-card">
-                  <img 
-                    src={album.image} 
-                    alt={album.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
-                    }}
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-20">
-                    <div className="w-28 h-28 rounded-none bg-primary text-black font-display font-bold text-[11px] tracking-wider flex items-center justify-center text-center p-4 border border-primary/20 transform scale-75 group-hover:scale-100 transition-transform duration-500 shadow-2xl uppercase">
-                      VIEW ALBUM
+              {isLeftImage ? (
+                // Image view
+                <div
+                  className="w-full h-full bg-cover bg-center bg-no-repeat relative group"
+                  style={{ backgroundImage: `url(${bgImage})` }}
+                >
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700" />
+                </div>
+              ) : (
+                // Content view
+                <div className="w-full h-full bg-black flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-16 md:pt-0">
+                  <div className="space-y-4 max-w-lg">
+                    <div className="flex items-center gap-2 text-primary font-display font-bold text-xs md:text-sm tracking-[0.2em]">
+                      <span>0{idx}</span>
+                      <span className="w-8 h-[1px] bg-primary" />
+                      <span>{album.projectType}</span>
+                    </div>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight text-white leading-none">
+                      {album.title}
+                    </h2>
+                    <div className="flex flex-col gap-2 text-white/60 font-body font-light text-sm">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        <span>{album.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Camera className="w-4 h-4 text-primary" />
+                        <span>{album.camera} | {album.lenses}</span>
+                      </div>
+                    </div>
+                    <p className="hidden md:block text-white/70 font-body font-light leading-relaxed text-sm md:text-base pt-2">
+                      Featuring highlights like: {album.highlights?.[0] || 'High contrast captures of scenery.'}
+                    </p>
+                    <div className="pt-4">
+                      <Link
+                        to={`/photo-albums/${album.slug}`}
+                        className="inline-flex items-center gap-3 px-6 py-3 border-2 border-primary text-primary font-display font-bold text-sm tracking-wider hover:bg-primary hover:text-black transition-all duration-300 uppercase"
+                      >
+                        <span>View Album</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="px-2">
-                  <h3 className="text-2xl font-display font-bold text-primary mb-2 group-hover:text-accent transition-colors uppercase tracking-tight">
-                    {album.title}
-                  </h3>
-                  <p className="text-white/60 font-body font-light">
-                    {album.location}
-                  </p>
+              )}
+            </div>
+
+            {/* Right Column */}
+            <div
+              className="absolute md:top-0 top-1/2 left-0 md:left-1/2 w-full md:w-1/2 h-1/2 md:h-full transition-transform duration-[1000ms] ease-in-out z-10"
+              style={{ transform: rightTrans }}
+            >
+              {!isLeftImage ? (
+                // Image view
+                <div
+                  className="w-full h-full bg-cover bg-center bg-no-repeat relative group"
+                  style={{ backgroundImage: `url(${bgImage})` }}
+                >
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700" />
                 </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+              ) : (
+                // Content view
+                <div className="w-full h-full bg-black flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-16 md:pt-0">
+                  <div className="space-y-4 max-w-lg">
+                    <div className="flex items-center gap-2 text-primary font-display font-bold text-xs md:text-sm tracking-[0.2em]">
+                      <span>0{idx}</span>
+                      <span className="w-8 h-[1px] bg-primary" />
+                      <span>{album.projectType}</span>
+                    </div>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight text-white leading-none">
+                      {album.title}
+                    </h2>
+                    <div className="flex flex-col gap-2 text-white/60 font-body font-light text-sm">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        <span>{album.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Camera className="w-4 h-4 text-primary" />
+                        <span>{album.camera} | {album.lenses}</span>
+                      </div>
+                    </div>
+                    <p className="hidden md:block text-white/70 font-body font-light leading-relaxed text-sm md:text-base pt-2">
+                      Featuring highlights like: {album.highlights?.[0] || 'High contrast captures of scenery.'}
+                    </p>
+                    <div className="pt-4">
+                      <Link
+                        to={`/photo-albums/${album.slug}`}
+                        className="inline-flex items-center gap-3 px-6 py-3 border-2 border-primary text-primary font-display font-bold text-sm tracking-wider hover:bg-primary hover:text-black transition-all duration-300 uppercase"
+                      >
+                        <span>View Album</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Progress Dots */}
+      <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
+        {albumsData.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentPage(i + 1)}
+            className={`w-3.5 h-3.5 rounded-none border border-primary transition-all duration-500 ${
+              currentPage === i + 1 ? 'bg-primary scale-125 shadow-[0_0_15px_rgba(255,205,82,0.6)]' : 'bg-transparent hover:bg-primary/30'
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Slide Counter Indicator (Moved to top-24 on mobile to prevent overlap) */}
+      <div className="absolute left-6 top-24 md:top-auto md:bottom-12 md:left-12 z-40 font-display font-bold text-2xl md:text-3xl text-primary tracking-widest">
+        0{currentPage} <span className="text-white/30 text-xl font-light">/</span> 0{numOfPages}
+      </div>
     </main>
   );
 }

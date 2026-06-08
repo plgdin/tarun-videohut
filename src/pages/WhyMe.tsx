@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import tarunImg from '../assets/TARUN.jpeg';
 
 export default function WhyMe() {
   return (
@@ -15,22 +16,10 @@ export default function WhyMe() {
           >
              <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full -z-10 mix-blend-screen"></div>
              <img 
-               src="https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png" 
+               src={tarunImg} 
                alt="About Tarun Kapoor" 
                className="w-full h-full object-cover rounded-sm border border-white/10 shadow-2xl video-card"
              />
-             
-             {/* Floating Badge */}
-             <motion.div 
-               initial={{ opacity: 0, scale: 0.8 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.4, duration: 0.6 }}
-               className="absolute -bottom-10 -right-10 bg-[#0d0d0d] p-10 rounded-sm border border-white/10 hidden md:block shadow-2xl"
-             >
-                <p className="text-[64px] font-display font-bold text-primary leading-none mb-2">8+</p>
-                <p className="text-[11px] text-white/60 font-display font-bold uppercase tracking-widest leading-[1.6]">Years of<br/>Directing</p>
-             </motion.div>
           </motion.div>
           
           <motion.div 
@@ -56,17 +45,6 @@ export default function WhyMe() {
               <p>
                 I handle projects from directorial treatment through scriptwriting, set direction, color grading, and edit lock. My goal is to capture the absolute visual truth of every script.
               </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-12 pt-10 border-t border-white/10">
-               <div>
-                  <p className="text-[48px] font-display font-bold mb-2 text-white">12+</p>
-                  <p className="text-[11px] text-white/50 uppercase tracking-widest font-display font-bold">Major Brands</p>
-               </div>
-               <div>
-                  <p className="text-[48px] font-display font-bold mb-2 text-white">50+</p>
-                  <p className="text-[11px] text-white/50 uppercase tracking-widest font-display font-bold">Films Directed</p>
-               </div>
             </div>
           </motion.div>
           

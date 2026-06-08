@@ -83,11 +83,11 @@ export default function Hero() {
           <div className="w-full h-full rounded-md border border-white/10 overflow-hidden relative group cursor-pointer shadow-2xl video-card">
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500 z-10" />
             <img 
-              src="https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png" 
+              src="https://mir-s3-cdn-cf.behance.net/projects/max_808/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png" 
               alt="Ola Electric Scooter Showreel Preview" 
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               onError={(e) => {
-                e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
+                e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
               }}
             />
             

@@ -5,9 +5,6 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Albums from './pages/Albums';
 import About from './pages/About';
-import Services from './pages/Services';
-import Blogs from './pages/Blogs';
-import BlogDetail from './pages/BlogDetail';
 import AlbumDetail from './pages/AlbumDetail';
 import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
@@ -15,10 +12,14 @@ import ScrollToTop from './components/ScrollToTop';
 function AppContent() {
   const location = useLocation();
   
-  // Design pattern: No footer on detail pages
+  // Design pattern: No footer on home page, detail pages and full-screen album pages
   const isDetailPage = 
-    location.pathname.startsWith('/blogs/') || 
-    location.pathname.startsWith('/photo-albums/');
+    location.pathname === '/' ||
+    location.pathname === '/about' ||
+    location.pathname === '/contact' ||
+    location.pathname.startsWith('/photo-albums/') ||
+    location.pathname === '/albums' ||
+    location.pathname === '/photo-albums';
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col justify-between">
@@ -32,9 +33,6 @@ function AppContent() {
           <Route path="/photo-albums" element={<Albums />} />
           <Route path="/photo-albums/:slug" element={<AlbumDetail />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
@@ -43,8 +41,14 @@ function AppContent() {
   );
 }
 
+import SmoothScroll from './components/ui/smooth-scroll';
+
 function App() {
-  return <AppContent />;
+  return (
+    <SmoothScroll>
+      <AppContent />
+    </SmoothScroll>
+  );
 }
 
 export default App;

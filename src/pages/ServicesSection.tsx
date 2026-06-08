@@ -8,21 +8,21 @@ const services = [
     desc: "Every great film starts with a blueprint. Laying the foundations through visual treatments, screenplays, concept development, location scouting, and character casting direction.",
     color: "bg-[#0d0d0d]",
     borderColor: "border-white/10",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png"
   },
   {
     title: "Production",
     desc: "On set, translating visual concept into raw cinematic reality. Directing performances, lighting design, cinematography, macro miniature scale shoots, and high-energy camera movements.",
     color: "bg-[#111111]",
     borderColor: "border-white/10",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/83e80e235103957.Y3JvcCwxNDQxLDExMjcsMTI1Miw2MA.png"
   },
   {
     title: "Post-Production",
     desc: "Sculpting the final output. Bringing all takes together through narrative-driven video editing, high-contrast custom color grading, sound design, and musical pacing.",
     color: "bg-[#161616]",
     borderColor: "border-white/10",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg"
+    image: "https://mir-s3-cdn-cf.behance.net/projects/max_808/920176163540461.Y3JvcCw5MDksNzExLDE4NCww.jpg"
   }
 ];
 

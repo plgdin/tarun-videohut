@@ -30,13 +30,13 @@ export default function Projects() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black z-10" />
           <motion.img 
             style={{ y, opacity }}
-            src="https://mir-s3-cdn-cf.behance.net/projects/404/70f41a224737901.Y3JvcCwxNzg5LDE0MDAsNTU4LDA.png" 
+            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80" 
             alt="Cameraman" 
             className="w-full h-full object-cover object-center opacity-40 select-none pointer-events-none absolute inset-0"
           />
         </div>
 
-        <div className="max-w-[1200px] mx-auto px-6 w-full relative z-20 pt-20">
+        <div className="max-w-[1400px] mx-auto px-6 w-full relative z-20 pt-32 md:pt-40">
           <div className="max-w-[700px] space-y-6">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -77,7 +77,7 @@ export default function Projects() {
       </section>
 
       {/* Portfolio Grid Section */}
-      <section className="py-20 px-6 max-w-[1200px] mx-auto">
+      <section className="py-20 px-6 max-w-[1400px] mx-auto">
         
         {/* Filter Pills */}
         <motion.div 
@@ -102,7 +102,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Catalog Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div 
@@ -132,7 +132,7 @@ export default function Projects() {
                     alt={project.title} 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     onError={(e) => {
-                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
+                      e.currentTarget.src = "https://mir-s3-cdn-cf.behance.net/projects/max_1200/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png";
                     }}
                   />
                 </div>

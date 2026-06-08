@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const marqueeItems = [
   "Directing", "Acting", "Scriptwriting", "Color Grading", "Production",
@@ -27,32 +27,6 @@ export default function Footer() {
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         
-        {/* 2. Large Collaborate CTA Card */}
-        <div className="relative rounded-sm p-8 md:p-16 mb-24 overflow-hidden bg-primary shadow-glow group">
-          <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
-          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
-            <div className="max-w-[600px] space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-primary">
-                  <span className="font-display font-black text-xl">TK</span>
-                </div>
-                <span className="font-display font-bold text-2xl text-black tracking-tight">Tarun Kapoor</span>
-              </div>
-              <h2 className="text-[36px] md:text-[56px] font-display font-bold leading-[1.1] text-black tracking-tight uppercase">
-                Let's construct your cinematic voice.
-              </h2>
-            </div>
-            
-            <HashLink 
-              smooth 
-              to="/#contact" 
-              className="inline-flex items-center gap-3 bg-black text-primary px-10 py-5 rounded-sm text-[16px] font-display font-bold hover:bg-white hover:text-black transition-all duration-300 transform group-hover:scale-105"
-            >
-              Let's Collaborate
-              <ArrowRight className="w-5 h-5" />
-            </HashLink>
-          </div>
-        </div>
 
         {/* 3. Footer Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-24">

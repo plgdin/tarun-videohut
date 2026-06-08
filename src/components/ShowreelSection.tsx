@@ -44,7 +44,7 @@ export default function ShowreelSection() {
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10" />
           
           <img 
-            src="https://mir-s3-cdn-cf.behance.net/projects/404/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png" 
+            src="https://mir-s3-cdn-cf.behance.net/projects/max_808/df6a62220266293.Y3JvcCwxNjY3LDEzMDQsMzI2LDA.png" 
             alt="Production Showreel Preview" 
             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
           />

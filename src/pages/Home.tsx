@@ -1,35 +1,26 @@
 import Hero from './Hero';
-import BrandPartners from '../components/BrandPartners';
-import ShowreelSection from '../components/ShowreelSection';
-import ServicesSection from './ServicesSection';
 import Work from './Work';
-import VideoPros from '../components/VideoPros';
-import WhyMe from './WhyMe';
-import Process from './Process';
-import Stats from './Stats';
-import Pricing from './Pricing';
 import Testimonials from '../components/Testimonials';
-import Faq from '../components/Faq';
-import BlogsPreview from '../components/BlogsPreview';
 import Contact from './Contact';
+import { CinematicFooter } from '../components/ui/motion-footer';
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <BrandPartners />
-      <ShowreelSection />
-      <ServicesSection />
-      <Work />
-      <VideoPros />
-      <WhyMe />
-      <Process />
-      <Stats />
-      <Pricing />
-      <Testimonials />
-      <Faq />
-      <BlogsPreview />
-      <Contact />
-    </main>
+    <div className="relative w-full bg-background min-h-screen overflow-x-hidden">
+      {/* 
+        MAIN CONTENT AREA 
+        We use a high z-index to allow the user to scroll down 
+        and reveal the footer securely underneath.
+      */}
+      <main className="relative z-10 w-full bg-background border-b border-border/20 shadow-2xl rounded-b-[2rem]">
+        <Hero />
+        <Work />
+        <Testimonials />
+        <Contact />
+      </main>
+
+      {/* The Cinematic Footer is injected here */}
+      <CinematicFooter />
+    </div>
   );
 }
